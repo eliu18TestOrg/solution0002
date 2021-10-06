@@ -1,0 +1,35 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: solution0002
+  description: solution0002
+  links:
+    - url: https://solution0002-dev.ea.sdlc.k8s.cbrands.com/testcontext02/api/message
+      title: Solution API
+      icon: dashboard
+  annotations:
+    github.com/project-slug: ConstellationBrands/solution0002
+    backstage.io/techdocs-ref: dir:.
+    backstage.io/kubernetes-label-selector: "app=solution0002"
+    argocd/app-selector: "app=solution0002"
+    jira/project-key: 
+    #circleci.com/project-slug: github/ConstellationBrands/solution0002
+    #jira/component: <example-component>
+spec:
+  type: service
+  lifecycle: experimental
+  owner: ConstellationBrands
+  providesApis:
+    - solution0002
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: solution0002
+  description: solution0002
+spec:
+  type: openapi
+  lifecycle: experimental
+  owner: ConstellationBrands
+  definition:
+    $text: https://github.com/ConstellationBrands/solution0002/blob/main/swagger.yaml
